@@ -3,8 +3,8 @@ import { toast } from "react-toastify";
 
 /* --------------- An axios instance with custom configuration -------------- */
 const axiosInstance = axios.create({
-  // baseURL: "https://snapit-nine.vercel.app", //  base URL
-  baseURL: "http://localhost:3000", //  base URL
+  baseURL: "https://snapit-nine.vercel.app", // production base URL
+  // baseURL: "http://localhost:3000", //  local base URL
   timeout: 20000, // timeout of 20 seconds
 });
 
