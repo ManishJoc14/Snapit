@@ -144,10 +144,10 @@ export function AdvancedFiltersDialog({
 
                 {/* ---------------------- Clear all filters button --------------------- */}
                 <div className="flex justify-center gap-4">
-                    <Button onClick={handleClear} className="w-full h-10 text-md font-semibold  bg-destructive/95 hover:bg-destructive">
+                    <Button onClick={handleClear} className="w-full h-10 text-md font-semibold bg-destructive/90 hover:bg-destructive text-white">
                         Clear All Filters
                     </Button>
-                    <Button onClick={handleClose} className="w-full h-10 text-md font-semibold bg-green-500 hover:bg-green-600">
+                    <Button onClick={handleClose} className="w-full h-10 text-md font-semibold bg-success/90 hover:bg-success text-white">
                         Save
                     </Button>
                 </div>
