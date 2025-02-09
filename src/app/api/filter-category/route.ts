@@ -1,6 +1,8 @@
-export async function GET() {
+export async function GET(req: Request) {
+    const params = new URLSearchParams(req.url.split("?")[1]);
+
     try {
-        const response = await fetch("https://snap-it-umber.vercel.app/api/filter-category");
+        const response = await fetch(`https://snap-it-umber.vercel.app/api/filter-category?${params.toString()}`);
 
         if (!response.ok) {
             throw new Error(`Failed to fetch: ${response.statusText}`);
