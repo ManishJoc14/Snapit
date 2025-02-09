@@ -55,6 +55,16 @@ export function AdvancedFiltersDialog({
         (value) => value !== "" && value !== false && value !== undefined,
     ).length
 
+    // to close the dialog
+    const handleClose = () => {
+        setOpen(false)
+    }
+    const handleClear = () => {
+        clearFilters()
+        setOpen(false)
+    }
+
+
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
@@ -96,7 +106,7 @@ export function AdvancedFiltersDialog({
                             {/* ------------ if group is expanded show the available filters of that group ------------ */}
                             {expandedGroups[group.name] && (
                                 <div className="mt-2 px-8">
-                                    <div className="grid grid-cols-4 gap-x-6 gap-y-4">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4">
                                         {Object.entries(group.filters).map(([key, filter]) => (
                                             <div key={key} className="flex flex-col space-y-4">
                                                 <Label htmlFor={key} className="text-sm">
@@ -130,12 +140,17 @@ export function AdvancedFiltersDialog({
                         </div>
                     ))}
                 </ScrollArea>
-                <Separator className="mt-0 mb-8" />
+                <Separator className="mt-0 mb-6" />
 
                 {/* ---------------------- Clear all filters button --------------------- */}
-                <Button onClick={clearFilters} className="w-full h-12 text-xl font-semibold bg-red-500 hover:bg-red-600">
-                    Clear All Filters
-                </Button>
+                <div className="flex justify-center gap-4">
+                    <Button onClick={handleClear} className="w-full h-10 text-md font-semibold  bg-destructive/95 hover:bg-destructive">
+                        Clear All Filters
+                    </Button>
+                    <Button onClick={handleClose} className="w-full h-10 text-md font-semibold bg-green-500 hover:bg-green-600">
+                        Save
+                    </Button>
+                </div>
             </DialogContent>
         </Dialog>
     )
