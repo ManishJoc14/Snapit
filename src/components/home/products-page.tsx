@@ -92,8 +92,8 @@ export default function ProductsPage({ selectedCategory }: { selectedCategory: C
         if (!pagination?.currentPage || !pagination?.itemsPerPage) return;
         localStorage.setItem("advancedFilters", JSON.stringify(filterValues));
         setQueryParams(new URLSearchParams({
-            orderBy: orderBy.toString(),
-            orderDirection,
+            sortBy: orderBy.toString(),
+            order: orderDirection,
             page: pagination.currentPage.toString(),
             limit: pagination.itemsPerPage.toString(),
             ...filterValues,
