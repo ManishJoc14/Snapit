@@ -13,14 +13,14 @@ interface PropsTypes {
 
 export default function SideNav({ selectedCategory, updateSelectedCategory, loading, categories }: PropsTypes) {
     return (
-        <aside className="w-full sm:w-56">
+        <aside className="w-full sm:w-56 sm:sticky sm:top-0 sm:h-full sm:overflow-y-auto ">
             <nav className="bg-muted/30 rounded-lg p-3">
                 <ul className="w-full flex flex-wrap gap-2">
                     {loading ? (
                         <CategoriesSkeleton />
                     ) : categories && categories.length > 0 ? (
                         categories.map((category) => (
-                            <li key={category._id} className="w-full">
+                            <li key={category._id} className="sm:w-full">
                                 <button className={clsx(
                                     "w-full text-left px-3 py-2 rounded-md hover:bg-primary hover:text-primary-foreground flex items-center gap-3",
                                     selectedCategory && selectedCategory._id === category._id && "bg-primary/90 text-primary-foreground"

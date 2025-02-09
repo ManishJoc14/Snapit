@@ -37,7 +37,7 @@ export default function Home() {
         {/* --------------------- left side menu with categories --------------------- */}
         <SideNav loading={loading} categories={categories} selectedCategory={selectedCategory} updateSelectedCategory={updateSelectedCategory} />
 
-        <div className="w-full overflow-y-auto max-h-[calc(100vh-7rem)]">
+        <div className="w-full">
           {/* ------------------------------ Products ----------------------------- */}
           <ProductsPage selectedCategory={selectedCategory} />
         </div>

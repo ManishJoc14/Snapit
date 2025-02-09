@@ -130,7 +130,7 @@ export default function ProductsPage({ selectedCategory }: { selectedCategory: C
             }
             <div className="flex  flex-col sm:flex-row sm:justify-between sm:items-center mb-6">
                 <h1 className="text-xl font-semibold">Buy {selectedCategory && <span>{selectedCategory.name}</span>} Products Online</h1>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-wrap mt-2">
                     {/* -------------------------- Filter ------------------------- */}
                     <AdvancedFiltersDialog
                         filterValues={filterValues}
